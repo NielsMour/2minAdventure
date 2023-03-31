@@ -11,9 +11,8 @@ const reponsesList = [
   "'rien'",
 ];
 
-export function Questions({ page, updatePage }) {
+export function Questions({ page, updatePage, lock, updateLock }) {
   const [questId, updateQuestId] = useState(0);
-  const [lock, updateLock] = useState([false, false, false]);
 
   function switchLock(arr, i) {
     arr.slice(i, i + 1);

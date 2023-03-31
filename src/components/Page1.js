@@ -11,7 +11,7 @@ export const Page1 = ({ updatePage, updatePseudo }) => {
   };
 
   return (
-    <div className="pseudo-maker">
+    <div className="form">
       <h1>Nom?</h1>
       <form onSubmit={(e) => handleInput(e)}>
         <input placeholder="pseudo" ref={pseudoInput} />
