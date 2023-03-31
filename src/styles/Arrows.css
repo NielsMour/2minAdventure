@@ -1,0 +1,25 @@
+.arrow-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+}
+.arrow-left {
+    height: 80px;
+    width: 80px;
+}
+.arrow-right {
+    height: 80px;
+    width: 80px;
+    margin-left: auto;
+}
+.arrow-left-shadow, .arrow-right-shadow {
+    height: 80px;
+    width: 80px;
+    opacity: 0.1;
+}
+.arrow-left:hover {
+    opacity: 0.5;
+}
+.arrow-right:hover {
+    opacity: 0.5;
+}

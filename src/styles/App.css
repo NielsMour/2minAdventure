@@ -1,0 +1,34 @@
+@import './Arrows.css';
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px;
+    border-radius: 20px;
+    background-color: white;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.app-img {
+    height: 80%;
+    width: 80%;
+    border-radius: 20px;
+}
+
+.q0, .q1, .q2{
+    font-weight: bold;
+}
+
+.q0:hover, .q1:hover, .q2:hover{
+    opacity: 0.5;
+}
+
+
+

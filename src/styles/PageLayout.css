@@ -1,0 +1,14 @@
+@import "./Arrows.css" ;
+
+.pseudo-maker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
