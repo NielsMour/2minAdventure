@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { HomePage } from "./HomePage";
 import { PageScroller } from "./PageScroller";
-import { Page1 } from "./Page1";
 import { Page2 } from "./Page2";
 import { Questions } from "./Questions";
 import { Form } from "./Form";
@@ -11,6 +10,7 @@ import arrowLeft from "../assets/arrow-left.png";
 import arrowRight from "../assets/arrow-right.png";
 
 import "../styles/App.css";
+import { EmailForm } from "./EmailForm";
 
 export function App() {
   const [page, updatePage] = useState(0);
@@ -20,6 +20,7 @@ export function App() {
   const [ans1, updateAns1] = useState("");
   const [ans2, updateAns2] = useState("");
   const [ans3, updateAns3] = useState("");
+  const [email, updateEmail] = useState("");
 
   function switchPage(page) {
     switch (page) {
@@ -97,7 +98,7 @@ export function App() {
         );
       case 10:
         return (
-          <div>
+          <div className="page">
             <h2>Qui es-tu : {ans1}</h2>
             <h2>Où vas-tu : {ans2}</h2>
             <h2>Qu'as tu fait : {ans3}</h2>
@@ -118,11 +119,17 @@ export function App() {
         );
       case 11:
         return (
-          <div>
-            <h2>
-              Voulez vous laisser un email pour savoir si vous allez être tué
-              par le joueur suivant? :
-            </h2>
+          <EmailForm
+            page={page}
+            updatePage={updatePage}
+            updateEmail={updateEmail}
+          />
+        );
+      case 12:
+        return (
+          <div className="page">
+            <h1>Merci d'avoir joué!</h1>
+            {email}
           </div>
         );
       default:

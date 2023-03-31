@@ -12,21 +12,21 @@ export const KillDecision = ({
     switch (arg) {
       case "killed":
         return (
-          <div>
+          <div className="page">
             <h2>Vous l'avez tué</h2>
             <PageScroller page={page} updatePage={updatePage} />
           </div>
         );
       case "notKilled":
         return (
-          <div>
+          <div className="page">
             <h2>Vous l'avez épargné</h2>
             <PageScroller page={page} updatePage={updatePage} />
           </div>
         );
       default:
         return (
-          <div>
+          <div className="page">
             <h3>Voulez vous tuer l'ennemi?</h3>
             <button onClick={() => updateIsKilled("killed")}>Oui</button>
             <button onClick={() => updateIsKilled("notKilled")}>Non</button>
