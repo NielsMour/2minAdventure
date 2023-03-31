@@ -32,8 +32,6 @@ export function App() {
   document.body.style.backgroundAttachment = "fixed";
   document.body.style.backgroundSize = "cover";
 
-  backgroundName;
-
   function switchPage(page) {
     switch (page) {
       case 0:
