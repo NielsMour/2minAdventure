@@ -1,34 +1,28 @@
 @import './Arrows.css';
 
+/* body {
+    background-image: url(../assets/backgroundTest2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+} */
+
 .app {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 60%;
+    height: 30%;
+    position: fixed;
     border: solid 2px;
     border-radius: 20px;
     background-color: white;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 25%;
 }
 
-ul {
-    list-style-type: none;
-}
-
-.app-img {
-    height: 80%;
-    width: 80%;
-    border-radius: 20px;
-}
-
-.q0, .q1, .q2{
-    font-weight: bold;
-}
-
-.q0:hover, .q1:hover, .q2:hover{
-    opacity: 0.5;
-}
 
 
 

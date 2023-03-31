@@ -24,18 +24,20 @@ export function Questions({ page, updatePage, lock, updateLock }) {
   return (
     <div className="page">
       <h3>{reponsesList[questId]}</h3>
-      {questionsList.map((q, index) => (
-        <button
-          key={`${index + q.length}`}
-          className={"q" + index}
-          onClick={() => {
-            updateQuestId(index + 1);
-            updateLock((arr) => switchLock(arr, index));
-          }}
-        >
-          {q}
-        </button>
-      ))}
+      <div>
+        {questionsList.map((q, index) => (
+          <button
+            key={`${index + q.length}`}
+            className={"q" + index}
+            onClick={() => {
+              updateQuestId(index + 1);
+              updateLock((arr) => switchLock(arr, index));
+            }}
+          >
+            {q}
+          </button>
+        ))}
+      </div>
       <div className="arrow-menu">
         <img
           src={arrowLeft}

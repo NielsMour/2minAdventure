@@ -8,6 +8,11 @@ import { KillDecision } from "./KillDecision";
 import img from "../assets/img.jpg";
 import arrowLeft from "../assets/arrow-left.png";
 import arrowRight from "../assets/arrow-right.png";
+import backgroundGeneric from "../assets/background/backgroundTest2.jpg";
+import backgroundName from "../assets/background/life-maybe-bw.jpg";
+import backgroundJourney from "../assets/background/encounter.jpg";
+import backgroundCavern from "../assets/background/cavern-silhouette.jpg";
+import backgroundDiscussion from "../assets/background/discussion.jpg";
 
 import "../styles/App.css";
 import { EmailForm } from "./EmailForm";
@@ -22,11 +27,19 @@ export function App() {
   const [ans3, updateAns3] = useState("");
   const [email, updateEmail] = useState("");
 
+  document.body.style.backgroundImage = `url(${backgroundGeneric})`;
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundAttachment = "fixed";
+  document.body.style.backgroundSize = "cover";
+
+  backgroundName;
+
   function switchPage(page) {
     switch (page) {
       case 0:
         return <HomePage page={page} updatePage={updatePage} />;
       case 1:
+        document.body.style.backgroundImage = `url(${backgroundName})`;
         return (
           <Form
             page={page}
@@ -36,8 +49,10 @@ export function App() {
           />
         );
       case 2:
+        document.body.style.backgroundImage = `url(${backgroundJourney})`;
         return <Page2 pseudo={pseudo} page={page} updatePage={updatePage} />;
       case 3:
+        document.body.style.backgroundImage = `url(${backgroundCavern})`;
         return (
           <div>
             <h2>BlaBlaBla</h2>
@@ -45,6 +60,7 @@ export function App() {
           </div>
         );
       case 4:
+        document.body.style.backgroundImage = `url(${backgroundDiscussion})`;
         return (
           <Questions
             page={page}
@@ -54,6 +70,7 @@ export function App() {
           />
         );
       case 5:
+        document.body.style.backgroundImage = `url(${backgroundDiscussion})`;
         return (
           <KillDecision
             page={page}
@@ -99,9 +116,11 @@ export function App() {
       case 10:
         return (
           <div className="page">
-            <h2>Qui es-tu : {ans1}</h2>
-            <h2>Où vas-tu : {ans2}</h2>
-            <h2>Qu'as tu fait : {ans3}</h2>
+            <div>
+              <div>Qui es-tu : {ans1}</div>
+              <div>Où vas-tu : {ans2}</div>
+              <div>Qu'as tu fait : {ans3}</div>
+            </div>
             <div className="arrow-menu">
               <img
                 src={arrowLeft}
@@ -137,10 +156,5 @@ export function App() {
     }
   }
 
-  return (
-    <div className="app">
-      <img src={img} alt="histoire" className="app-img" />
-      {switchPage(page)}
-    </div>
-  );
+  return <div className="app">{switchPage(page)}</div>;
 }

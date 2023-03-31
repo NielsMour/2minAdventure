@@ -1,5 +1,7 @@
 import { PageScroller } from "./PageScroller";
 
+import backgroundLife from "../assets/background/life.jpg";
+import backgroundDeath from "../assets/background/death-bw.jpg";
 import "../styles/PageLayout.css";
 
 export const KillDecision = ({
@@ -11,6 +13,7 @@ export const KillDecision = ({
   function switchKilled(arg) {
     switch (arg) {
       case "killed":
+        document.body.style.backgroundImage = `url(${backgroundDeath})`;
         return (
           <div className="page">
             <h2>Vous l'avez tué</h2>
@@ -18,6 +21,7 @@ export const KillDecision = ({
           </div>
         );
       case "notKilled":
+        document.body.style.backgroundImage = `url(${backgroundLife})`;
         return (
           <div className="page">
             <h2>Vous l'avez épargné</h2>
