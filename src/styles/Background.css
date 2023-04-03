@@ -1,0 +1,53 @@
+
+.background0, .background1, .background2, .background3, .background4,
+.background5, .background6, .background7, .background8, .background9,
+.background10, .background11, .background12 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: 0;
+}
+
+.background0 {
+    background-image: url('../assets/background/backgroundTest2.jpg');
+}
+.background1 {
+    background-image: url('../assets/background/life-maybe-bw.jpg');
+}
+.background2 {
+    background-image: url('../assets/background/life-maybe-bw.jpg');
+}
+.background3 {
+    background-image: url('../assets/background/encounter.jpg');
+}
+.background4 {
+    background-image: url('../assets/background/discussion.jpg');
+}
+.background5 {
+    background-image: url('../assets/background/backgroundTest2.jpg');
+}
+.background6 {
+    background-image: url('../assets/background/backgroundTest2.jpg');
+}
+.background7 {
+    background-image: url('../assets/background/backgroundTest2.jpg');
+}
+.background8 {
+    background-image: url('../assets/background/backgroundTest2.jpg');
+}
+.background9 {
+    background-image: url('../assets/background/backgroundTest2.jpg');
+}
+.background10 {
+    background-image: url('../assets/background/backgroundTest2.jpg');
+}
+.background11 {
+    background-image: url('../assets/background/backgroundTest2.jpg');
+}
+.background12 {
+    background-image: url('../assets/background/backgroundTest2.jpg');
+}

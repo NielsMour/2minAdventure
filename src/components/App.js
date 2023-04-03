@@ -1,18 +1,16 @@
 import { useState, useRef, useEffect } from "react";
+import { useSpring, useTransition, animated } from "react-spring";
+
 import { HomePage } from "./HomePage";
 import { PageScroller } from "./PageScroller";
 import { Page2 } from "./Page2";
 import { Questions } from "./Questions";
 import { Form } from "./Form";
 import { KillDecision } from "./KillDecision";
-import img from "../assets/img.jpg";
+
 import arrowLeft from "../assets/arrow-left.png";
 import arrowRight from "../assets/arrow-right.png";
-import backgroundGeneric from "../assets/background/backgroundTest2.jpg";
-import backgroundName from "../assets/background/life-maybe-bw.jpg";
-import backgroundJourney from "../assets/background/encounter.jpg";
-import backgroundCavern from "../assets/background/cavern-silhouette.jpg";
-import backgroundDiscussion from "../assets/background/discussion.jpg";
+import img from "../assets/img.jpg";
 
 import "../styles/App.css";
 import { EmailForm } from "./EmailForm";
@@ -27,30 +25,38 @@ export function App() {
   const [ans3, updateAns3] = useState("");
   const [email, updateEmail] = useState("");
 
-  document.body.style.backgroundImage = `url(${backgroundGeneric})`;
-  document.body.style.backgroundRepeat = "no-repeat";
-  document.body.style.backgroundAttachment = "fixed";
-  document.body.style.backgroundSize = "cover";
+  const transition = useTransition(page, {
+    from: { opacity: "0" },
+    enter: { opacity: "1" },
+    leave: { opacity: "1" },
+    trail: "5000",
+    config: { duration: "700" },
+  });
+
+  document.title = "2minAdventure";
+
+  function mainTitle() {
+    if (page == 0) {
+      return <h1>2minAdventure</h1>;
+    }
+  }
 
   function switchPage(page) {
     switch (page) {
       case 0:
         return <HomePage page={page} updatePage={updatePage} />;
       case 1:
-        document.body.style.backgroundImage = `url(${backgroundName})`;
         return (
           <Form
             page={page}
             updatePage={updatePage}
             updateAns={updatePseudo}
-            text="Nom?"
+            text="> Comment s'appelle le héro?"
           />
         );
       case 2:
-        document.body.style.backgroundImage = `url(${backgroundJourney})`;
         return <Page2 pseudo={pseudo} page={page} updatePage={updatePage} />;
       case 3:
-        document.body.style.backgroundImage = `url(${backgroundCavern})`;
         return (
           <div>
             <h2>BlaBlaBla</h2>
@@ -58,7 +64,6 @@ export function App() {
           </div>
         );
       case 4:
-        document.body.style.backgroundImage = `url(${backgroundDiscussion})`;
         return (
           <Questions
             page={page}
@@ -68,7 +73,6 @@ export function App() {
           />
         );
       case 5:
-        document.body.style.backgroundImage = `url(${backgroundDiscussion})`;
         return (
           <KillDecision
             page={page}
@@ -154,5 +158,16 @@ export function App() {
     }
   }
 
-  return <div className="app">{switchPage(page)}</div>;
+  return (
+    <div>
+      {transition((style, i) => {
+        return (
+          <animated.div style={style} className={`background${i}`}>
+            <div className="Title">{mainTitle()}</div>
+          </animated.div>
+        );
+      })}
+      <div className="box">{switchPage(page)}</div>
+    </div>
+  );
 }

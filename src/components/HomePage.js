@@ -1,9 +1,13 @@
-import "../styles/HomePage.css";
+import "../styles/PageLayout.css";
 
 export const HomePage = ({ page, updatePage }) => {
   return (
-    <button className="buttonEntry" type="button" onClick={() => updatePage(1)}>
-      Enter
+    <button
+      className="buttonEntry"
+      type="button"
+      onClick={() => updatePage(page + 1)}
+    >
+      Play
     </button>
   );
 };

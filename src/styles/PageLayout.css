@@ -1,13 +1,10 @@
 @import "./Arrows.css" ;
 
-.form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 5%;
+.buttonEntry {
+    font-size: 200%;
 }
 
-.page {
+.page .form {
     display: flex;
     flex-direction: column;
     align-items: center;
