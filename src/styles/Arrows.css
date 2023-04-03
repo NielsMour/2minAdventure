@@ -1,17 +1,26 @@
 .arrow-menu {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: space-between;
 }
 .arrow-left {
     height: 80px;
     width: 80px;
+    margin-left: auto;
 }
 .arrow-right {
     height: 80px;
     width: 80px;
+    margin-right: auto;
+}
+.arrow-left-shadow{
     margin-left: auto;
 }
+.arrow-right-shadow {
+    margin-right: auto;
+}
+
 .arrow-left-shadow, .arrow-right-shadow {
     height: 80px;
     width: 80px;

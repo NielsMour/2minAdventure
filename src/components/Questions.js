@@ -4,12 +4,7 @@ import arrowLeft from "../assets/arrow-left.png";
 import arrowRight from "../assets/arrow-right.png";
 
 const questionsList = ["Qui es tu?", "Où vas tu?", "Qu'as tu fait?"];
-const reponsesList = [
-  "tu peux poser 3 questions à l'ennemi :",
-  "'personne'",
-  "'nulle part'",
-  "'rien'",
-];
+const reponsesList = ["3 Questions :", "'personne'", "'nulle part'", "'rien'"];
 
 export function Questions({ page, updatePage, lock, updateLock }) {
   const [questId, updateQuestId] = useState(0);
