@@ -1,10 +1,21 @@
 import { useState, useEffect } from "react";
 
+import "../styles/PageLayout.css";
+
 import arrowLeft from "../assets/arrow-left.png";
 import arrowRight from "../assets/arrow-right.png";
 
-const questionsList = ["Qui es tu?", "Où vas tu?", "Qu'as tu fait?"];
-const reponsesList = ["3 Questions :", "'personne'", "'nulle part'", "'rien'"];
+const questionsList = [
+  "Qui es-tu?",
+  "Qu'y a-t-il derrière toi?",
+  "Qu'as-tu fait?",
+];
+const reponsesList = [
+  "",
+  "'Juste un simple villageois comme toi'",
+  "'Tu ne veux pas savoir'",
+  "'Rien de grave je te promets'",
+];
 
 export function Questions({ page, updatePage, lock, updateLock }) {
   const [questId, updateQuestId] = useState(0);
@@ -18,8 +29,8 @@ export function Questions({ page, updatePage, lock, updateLock }) {
 
   return (
     <div className="page">
-      <h3>{reponsesList[questId]}</h3>
-      <div>
+      <h2>{">"} Tu peux poser trois questions à l'homme ensanglanté :</h2>
+      <div className="questions">
         {questionsList.map((q, index) => (
           <button
             key={`${index + q.length}`}
@@ -33,6 +44,7 @@ export function Questions({ page, updatePage, lock, updateLock }) {
           </button>
         ))}
       </div>
+      <div className="responses">{reponsesList[questId]}</div>
       <div className="arrow-menu">
         <img
           src={arrowLeft}
@@ -54,7 +66,6 @@ export function Questions({ page, updatePage, lock, updateLock }) {
               : undefined
           }
         />
-        ;
       </div>
     </div>
   );

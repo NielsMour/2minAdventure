@@ -1,38 +1,40 @@
 @import './Arrows.css';
 @import './Background.css';
-
-body {
-    margin: 0px;
-    height: 100%;
-}
+@import './PageLayout.css';
 
 .Title {
-    align-self: center;
+    top: 27.5vh;
+    left: 100vh;
     position: absolute;
-    top: 10%;
-    left: 25%;
-    right: 30%;
     z-index: 2;
-    font-size: 300%;
+    font-size: 9vh;
     color: white;
     text-shadow: black 1px 2px 2px ;
 }
+
 .box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    height: 30%;
-    position: fixed;
-    border: solid 2px;
-    border-radius: 20px;
-    background-color: white;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 25%;
+    width: 80vh;
+    height: 80vh;
+    margin-left: 15vh;
+    margin-top: 10vh; 
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.594);
+    border: solid 0.5vh;
+    border-radius: 5vh;
     z-index: 1;
 }
+.menu {
+    position: absolute;
+    z-index: 2;
+    width: 2%;
+    margin-top: 37.7%;
+    margin-left: 9%;
+}
+
+.menu:hover {
+    opacity: 0.5;
+}
+
 
 
 

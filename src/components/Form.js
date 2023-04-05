@@ -11,10 +11,10 @@ export const Form = ({ page, updatePage, updateAns, text }) => {
   };
 
   return (
-    <div className="form">
-      <h1>{text}</h1>
+    <div className="page">
+      <h2>{text}</h2>
       <form onSubmit={(e) => handleInput(e)}>
-        <input placeholder="réponse?" ref={ansInput} />
+        <input className="textBox" ref={ansInput} />
         <input type="submit" hidden />
       </form>
     </div>

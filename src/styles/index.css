@@ -1,6 +1,4 @@
-/* body {
-    background-image: url(../assets/backgroundTest2.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-} */
+body {
+    margin: 0px;
+    height: 100%;
+}

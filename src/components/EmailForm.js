@@ -13,13 +13,18 @@ export const EmailForm = ({ page, updatePage, updateEmail }) => {
   return (
     <div className="page">
       <h2>
-        Voulez vous laisser un email pour savoir si vous allez être tué par le
-        joueur suivant? :
+        Souhaitez vous laisser un email afin d'être contacté pour savoir si vous
+        avez été tué ou non par le jouer suivant?
       </h2>
-      <form onSubmit={(e) => handleEmail(e)}>
-        <input type="email" placeholder="email" ref={emailInput} />
+      <form className="mailForm" onSubmit={(e) => handleEmail(e)}>
+        <input
+          className="textBox"
+          type="email"
+          placeholder="mail?"
+          ref={emailInput}
+        />
         <input type="submit" hidden />
-        <button>Non</button>
+        <button className="textBox">Non</button>
       </form>
     </div>
   );
